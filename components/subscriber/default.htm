@@ -3,8 +3,26 @@
     <input type="hidden" name="latitude" id="latitude">
     <input type="hidden" name="longitude" id="longitude">
     <input type="hidden" name="project" value="{{ project }}">
-    <label for="email">Email Address</label>
-    <input type="text" name="email">
+
+    <div class="form-group text-field">
+      <label for="email">Email Address</label>
+      <input type="text" name="email" class="form-control">
+    </div>
+
+    {% if(displayFirstName) %}
+    <div class="form-group text-field">
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstname" placeholder="First Name" class="form-control">
+    </div>
+    {% endif %}
+
+    {% if(displayLastName) %}
+    <div class="form-group text-field">
+      <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" placeholder="Last Name" class="form-control">
+    </div>
+    {% endif %}
+
     <button form="form-sm-subsscribe" class="btn">Subscribe</button>
   </form>
 </div>

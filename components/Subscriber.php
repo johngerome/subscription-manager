@@ -16,18 +16,28 @@ class Subscriber extends ComponentBase
 
   public function defineProperties() {
     return [
-      'Project' => [
-            'title'     => 'johngerome.sm::lang.projects.project_name',
-            'type'      => 'dropdown',
-            'required'  => true,
-            'options'   => $this->getProjectOptions()
-        ]
+      'project' => [
+          'title'     => 'johngerome.sm::lang.projects.project_name',
+          'type'      => 'dropdown',
+          'required'  => true,
+          'options'   => $this->getProjectOptions(),
+        ],
+      'firstname' => [
+          'title'     => 'johngerome.sm::lang.subscribe.display_firstname',
+          'type'      => 'checkbox',
+      ],
+      'lastname' => [
+          'title'     => 'johngerome.sm::lang.subscribe.display_lastname',
+          'type'      => 'checkbox',
+      ],
     ];
   }
 
   public function onRun()
   {
-     $this->page['project'] = $this->property('Project');
+     $this->page['project'] = $this->property('project');
+     $this->page['displayFirstName'] = $this->property('firstname');
+     $this->page['displayLastName'] = $this->property('lastname');
      $this->addJs('/plugins/johngerome/sm/assets/js/geo.js');
   }
 

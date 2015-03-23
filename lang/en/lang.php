@@ -23,8 +23,9 @@ return [
       'delete_contacts_success'     => 'Contact Successfully deleted.'
   ],
   'subscribe' => [
-      'com_name'  => 'Subscriber Form',
-      'com_description' => 'Subscriber Form',
+      'com_name'           => 'Subscriber Form',
+      'com_description'    => 'Subscriber Form',
+      'display_firstname'  => 'Display First Name',
+      'display_lastname'   => 'Display Last Name',
   ],
-
 ];
