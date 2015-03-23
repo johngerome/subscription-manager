@@ -33,7 +33,7 @@ class Plugin extends PluginBase {
             'sideMenu' => [
                 'projects' => [
                     'label'       => 'johngerome.sm::lang.projects.menu_label',
-                    'icon'        => 'icon-copy',
+                    'icon'        => 'icon-folder-o',
                     'url'         => Backend::url('johngerome/sm/projects'),
                     'permissions' => ['johngerome.sm.projects'],
                     'description' => 'johngerome.sm::lang.projects.menu_description'
