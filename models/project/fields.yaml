@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: johngerome.sm::lang.projects.project_name
+        disabled: false
+

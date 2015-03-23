@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: johngerome.sm::lang.contacts.contact_id
+        searchable: true
+    email:
+        label: johngerome.sm::lang.contacts.email_address
+        searchable: true
+    firstname:
+        label: johngerome.sm::lang.contacts.first_name
+        searchable: true
+    lastname:
+        label: johngerome.sm::lang.contacts.last_name
+        searchable: true
+    projects:
+        label: johngerome.sm::lang.contacts.project
+        relation: projects
+        select: name
+        searchable: true
+    created_at:
+        label: johngerome.sm::lang.contacts.created_at
+        searchable: true
+        type: date

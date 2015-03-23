@@ -1,0 +1,12 @@
+<div class="c-sm-form">
+  <form name="form-sm-subsscribe" id="form-sm-subsscribe" data-request="{{ __SELF__ }}::onAddSubscriber" data-request-update="'{{__SELF__}}::alert': '#result'">
+    <input type="hidden" name="latitude" id="latitude">
+    <input type="hidden" name="longitude" id="longitude">
+    <input type="hidden" name="project" value="{{ project }}">
+    <label for="email">Email Address</label>
+    <input type="text" name="email">
+    <button form="form-sm-subsscribe" class="btn">Subscribe</button>
+  </form>
+</div>
+
+<div id="result"></div>

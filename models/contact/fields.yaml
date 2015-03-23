@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    email:
+        label: johngerome.sm::lang.contacts.email_address
+        disabled: false
+    firstname:
+        label: johngerome.sm::lang.contacts.first_name
+        disabled: false
+    lastname:
+        label: johngerome.sm::lang.contacts.last_name
+        disabled: false
+    projects:
+        label: johngerome.sm::lang.contacts.project
+        type: relation

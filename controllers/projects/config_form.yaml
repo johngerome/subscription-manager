@@ -1,0 +1,33 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Project
+
+# Model Form Field configuration
+form: $/johngerome/sm/models/project/fields.yaml
+
+# Model Class name
+modelClass: JohnGerome\Sm\Models\Project
+
+# Default redirect location
+defaultRedirect: johngerome/sm/projects
+
+# Create page
+create:
+    title: Create Project
+    redirect: johngerome/sm/projects/update/:id
+    redirectClose: johngerome/sm/projects
+
+# Update page
+update:
+    title: Edit Project
+    redirect: johngerome/sm/projects
+    redirectClose: johngerome/sm/projects
+    flashSave: Post updated successfully!
+    flashDelete: Post has been deleted.
+
+# Preview page
+preview:
+    title: Preview Project

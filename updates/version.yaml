@@ -1,0 +1,4 @@
+1.0.0:
+    - Add contacts and projects tables
+    - create_projects_table.php
+    - create_contacts_table.php

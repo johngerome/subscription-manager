@@ -1,0 +1,28 @@
+{
+    "name": "johngerome/subscription-manager",
+    "type": "october-plugin",
+    "description": "Easy way to manage your subscribers.",
+    "keywords": ["october", "cms", "simple", "subscribe", "John Gerome", "Baldonado", "johngerome"],
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "John Gerome Baldonado",
+            "email": "johngerome@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "JohnGerome\\Sm\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0"
+        }
+    }
+}

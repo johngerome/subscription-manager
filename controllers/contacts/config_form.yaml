@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Contact
+
+# Model Form Field configuration
+form: $/johngerome/sm/models/contact/fields.yaml
+
+# Model Class name
+modelClass: JohnGerome\Sm\Models\Contact
+
+# Default redirect location
+defaultRedirect: johngerome/sm/contacts
+
+# Create page
+create:
+    title: Create Contact
+    redirect: johngerome/sm/contacts/update/:id
+    redirectClose: johngerome/sm/contacts
+
+# Update page
+update:
+    title: Edit Contact
+    redirect: johngerome/sm/contacts
+    redirectClose: johngerome/sm/contacts
+
+# Preview page
+preview:
+    title: Preview Contact
