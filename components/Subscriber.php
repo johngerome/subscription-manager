@@ -52,6 +52,8 @@ class Subscriber extends ComponentBase
     $project_id = post('project');
     $data = [
         "email"        => post('email'),
+        "firstname"    => post('firstname'),
+        "lastname"     => post('lastname'),
         "latitude"     => post('latitude'),
         "longitude"    => post('longitude'),
     ];
