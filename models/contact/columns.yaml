@@ -22,5 +22,5 @@ columns:
         searchable: true
     created_at:
         label: johngerome.sm::lang.contacts.created_at
+        type: datetime
         searchable: true
-        type: date
