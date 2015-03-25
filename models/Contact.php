@@ -27,7 +27,7 @@ class Contact extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['firstname', 'lastname', 'email', 'latitude', 'longitude', 'attributes'];
+    protected $fillable = ['firstname', 'lastname', 'email', 'latitude', 'longitude', 'contact_att'];
 
     public $belongsToMany = [
         'projects' => [

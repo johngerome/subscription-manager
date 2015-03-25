@@ -39,7 +39,7 @@ class Subscriber extends ComponentBase
      $this->page['project']          = $this->property('project');
      $this->page['displayFirstName'] = $this->property('firstname');
      $this->page['displayLastName']  = $this->property('lastname');
-     $this->page['attributes']       = (isset($_GET)) ? json_encode($_GET) : '';
+     $this->page['contact_att']       = (isset($_GET)) ? json_encode($_GET) : '';
      $this->addJs('/plugins/johngerome/sm/assets/js/geo.js');
   }
 
@@ -58,7 +58,7 @@ class Subscriber extends ComponentBase
         "lastname"     => post('lastname'),
         "latitude"     => post('latitude'),
         "longitude"    => post('longitude'),
-        "attributes"   => post('attributes'),
+        "contact_att"  => post('contact_att'),
     ];
 
     try{

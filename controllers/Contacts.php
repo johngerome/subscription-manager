@@ -58,6 +58,10 @@ class Contacts extends Controller
                     continue;
 
                 $contact->delete();
+                // Delete Also on Contacts Projects
+                DB::table('johng_sm_contacts_projects')
+                    ->where('contact_id', $contactId)
+                    ->delete();
             }
 
             Flash::success(Lang::get('johngerome.sm::lang.contacts.delete_contacts_success'));

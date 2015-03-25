@@ -17,7 +17,7 @@ class CreateContactsTable extends Migration
             $table->string('lastname')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
-            $table->text('attributes')->nullable();
+            $table->text('contact_att')->nullable();
             $table->timestamps();
         });
     }
