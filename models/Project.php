@@ -21,13 +21,14 @@ class Project extends Model
     protected $guarded = ['*'];
 
     protected $rules = [
-        'name'  => 'required|unique:johng_sm_projects'
+        'name'  => 'required|unique:johng_sm_projects',
+        'color' => 'required',
     ];
 
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'color'];
 
     public $belongsToMany = [
         'contacts' => [

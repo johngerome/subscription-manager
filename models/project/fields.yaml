@@ -6,4 +6,6 @@ fields:
     name:
         label: johngerome.sm::lang.projects.project_name
         disabled: false
-
+    color:
+        label: johngerome.sm::lang.projects.project_color
+        disabled: false

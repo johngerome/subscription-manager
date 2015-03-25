@@ -1,2 +1,14 @@
-
+<?php if(count($projects) > 0): ?>
+<div class="scoreboard">
+    <div data-control="toolbar">
+        <div class="scoreboard-item control-chart" data-control="chart-bar">
+            <ul>
+              <?php foreach($projects as $project): ?>
+                <li data-color="<?php echo $project['color'] ?>"><?= e(trans($project['name'])) ?><span><?php echo $project->contacts()->count(); ?></span></li>
+              <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
 <?= $this->listRender() ?>

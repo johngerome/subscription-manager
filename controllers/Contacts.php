@@ -4,6 +4,7 @@ use Flash;
 use BackendMenu;
 use Backend\Classes\Controller;
 use johnGerome\Sm\Models\Contact;
+use johnGerome\Sm\Models\Project;
 
 /**
  * Contacts Back-end Controller
@@ -28,6 +29,11 @@ class Contacts extends Controller
         $this->addJs('/plugins/johngerome/sm/assets/js/tableExport.js');
         $this->addJs('/plugins/johngerome/sm/assets/js/jquery.base64.js');
         $this->addJs('/plugins/johngerome/sm/assets/js/backend.js');
+    }
+
+    public function index() {
+        $this->vars['projects'] = Project::all();
+        $this->asExtension('ListController')->index();
     }
 
     public function index_onDelete()

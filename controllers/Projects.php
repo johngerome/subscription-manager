@@ -2,6 +2,7 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use JohnGerome\Sm\Models\Project;
 
 /**
  * Projects Back-end Controller

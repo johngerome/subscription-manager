@@ -10,3 +10,6 @@ columns:
     name:
         label: johngerome.sm::lang.projects.project_name
         searchable: true
+    color:
+        label: johngerome.sm::lang.projects.project_color
+        searchable: true
