@@ -10,7 +10,7 @@ return [
       'menu_description'  => 'Manage Projects',
       'project_name'      => 'Project Name',
       'project_id'        => 'Project ID',
-      'project_color'     =>  'Project Color',
+      'project_color'     => 'Chart Bar Color',
   ],
   'contacts' => [
       'menu_label'        => 'Contacts',
