@@ -22,7 +22,7 @@ return [
       'project'           => 'Project',
       'attributes'        => 'Attributes',
       'created_at'        => 'Date Created',
-      'delete_contacts_success'     => 'Contact Successfully deleted.'
+      'delete_contacts_success'  => 'Contact Successfully deleted.'
   ],
   'subscribe' => [
       'com_name'           => 'Subscriber Form',

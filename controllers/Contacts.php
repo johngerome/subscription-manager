@@ -28,10 +28,6 @@ class Contacts extends Controller
         parent::__construct();
 
         BackendMenu::setContext('JohnGerome.Sm', 'sm', 'contacts');
-        
-        $this->addJs('/plugins/johngerome/sm/assets/js/tableExport.js');
-        $this->addJs('/plugins/johngerome/sm/assets/js/jquery.base64.js');
-        $this->addJs('/plugins/johngerome/sm/assets/js/backend.js');
     }
 
     public function index() {
