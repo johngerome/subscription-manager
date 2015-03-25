@@ -1,6 +1,8 @@
 <?php namespace JohnGerome\Sm\Controllers;
 
 use Flash;
+use DB;
+use Lang;
 use BackendMenu;
 use Backend\Classes\Controller;
 use johnGerome\Sm\Models\Contact;
@@ -26,13 +28,24 @@ class Contacts extends Controller
         parent::__construct();
 
         BackendMenu::setContext('JohnGerome.Sm', 'sm', 'contacts');
+        
         $this->addJs('/plugins/johngerome/sm/assets/js/tableExport.js');
         $this->addJs('/plugins/johngerome/sm/assets/js/jquery.base64.js');
         $this->addJs('/plugins/johngerome/sm/assets/js/backend.js');
     }
 
     public function index() {
-        $this->vars['projects'] = Project::all();
+        $projects = array();
+        $i = 0;
+        foreach(Project::all() as $project) {
+                $projects[$i]['color'] = $project['color'];
+                $projects[$i]['name']  = $project['name'];
+                $projects[$i]['numContact']  = DB::table('johng_sm_contacts_projects')
+                                                ->where('project_id', $project['id'])
+                                                ->count();
+                $i++;
+        }
+        $this->vars['projects'] = $projects;
         $this->asExtension('ListController')->index();
     }
 
@@ -47,7 +60,7 @@ class Contacts extends Controller
                 $contact->delete();
             }
 
-            Flash::success('johngerome.sm::lang.contacts.delete_contacts_success');
+            Flash::success(Lang::get('johngerome.sm::lang.contacts.delete_contacts_success'));
         }
 
         return $this->listRefresh();

@@ -12,4 +12,6 @@ columns:
         searchable: true
     color:
         label: johngerome.sm::lang.projects.project_color
+        type: partial
+        path: ~/plugins/johngerome/sm/models/project/color/_color_column.htm
         searchable: true

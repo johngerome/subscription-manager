@@ -20,6 +20,7 @@ return [
       'first_name'        => 'First Name',
       'last_name'         => 'Last Name',
       'project'           => 'Project',
+      'attributes'        => 'Attributes',
       'created_at'        => 'Date Created',
       'delete_contacts_success'     => 'Contact Successfully deleted.'
   ],

@@ -1,5 +1,6 @@
 <?php namespace JohnGerome\Sm\Components;
 
+use Response;
 use Cms\Classes\ComponentBase;
 use JohnGerome\Sm\Models\Project;
 use JohnGerome\Sm\Models\Contact;
@@ -35,9 +36,10 @@ class Subscriber extends ComponentBase
 
   public function onRun()
   {
-     $this->page['project'] = $this->property('project');
+     $this->page['project']          = $this->property('project');
      $this->page['displayFirstName'] = $this->property('firstname');
-     $this->page['displayLastName'] = $this->property('lastname');
+     $this->page['displayLastName']  = $this->property('lastname');
+     $this->page['attributes']       = (isset($_GET)) ? json_encode($_GET) : '';
      $this->addJs('/plugins/johngerome/sm/assets/js/geo.js');
   }
 
@@ -46,16 +48,17 @@ class Subscriber extends ComponentBase
   }
 
   public function onAddSubscriber() {
-    $error = false;
+    $error   = false;
     $message = 'Thank You for Subscribing';
 
-    $project_id = post('project');
+    $project_id   = post('project');
     $data = [
         "email"        => post('email'),
         "firstname"    => post('firstname'),
         "lastname"     => post('lastname'),
         "latitude"     => post('latitude'),
         "longitude"    => post('longitude'),
+        "attributes"   => post('attributes'),
     ];
 
     try{

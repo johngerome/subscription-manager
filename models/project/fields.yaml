@@ -8,4 +8,6 @@ fields:
         disabled: false
     color:
         label: johngerome.sm::lang.projects.project_color
+        type: partial
+        path: ~/plugins/johngerome/sm/models/project/color/_color_field.htm
         disabled: false

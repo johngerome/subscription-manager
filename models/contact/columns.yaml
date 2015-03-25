@@ -24,3 +24,8 @@ columns:
         label: johngerome.sm::lang.contacts.created_at
         type: datetime
         searchable: true
+    attributes:
+        label: johngerome.sm::lang.contacts.attributes
+        type: partial
+        path: ~/plugins/johngerome/sm/models/contact/attributes/_attributes_column.htm
+        searchable: true

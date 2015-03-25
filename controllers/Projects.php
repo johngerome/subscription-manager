@@ -24,5 +24,7 @@ class Projects extends Controller
         parent::__construct();
 
         BackendMenu::setContext('JohnGerome.Sm', 'sm', 'projects');
+
+        $this->addCss('/plugins/johngerome/sm/assets/css/johngerome-sm.css');
     }
 }

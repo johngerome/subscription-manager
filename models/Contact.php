@@ -21,13 +21,13 @@ class Contact extends Model
     protected $guarded = ['*'];
 
     protected $rules = [
-        'email'  => 'required|email|unique:johng_sm_contacts'
+        'email' => 'required|email',
     ];
 
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['firstname', 'lastname', 'email', 'latitude', 'longitude'];
+    protected $fillable = ['firstname', 'lastname', 'email', 'latitude', 'longitude', 'attributes'];
 
     public $belongsToMany = [
         'projects' => [

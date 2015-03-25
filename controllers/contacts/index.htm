@@ -3,9 +3,9 @@
     <div data-control="toolbar">
         <div class="scoreboard-item control-chart" data-control="chart-bar">
             <ul>
-              <?php foreach($projects as $project): ?>
-                <li data-color="<?php echo $project['color'] ?>"><?= e(trans($project['name'])) ?><span><?php echo $project->contacts()->count(); ?></span></li>
-              <?php endforeach; ?>
+              <?php for($i = 0; $i < count($projects); $i++): ?>
+                <li data-color="<?php echo $projects[$i]['color'] ?>"><?= e(trans($projects[$i]['name'])) ?><span><?php echo $projects[$i]['numContact']; ?></span></li>
+              <?php endfor; ?>
             </ul>
         </div>
     </div>
