@@ -22,6 +22,13 @@ class Plugin extends PluginBase {
       ];
     }
 
+    public function registerMailTemplates()
+    {
+        return [
+            'johngerome.sm::mail.confirmed_opt_in' => 'After Subscribing.',
+        ];
+    }
+
     public function registerNavigation() {
         return [
           'sm' => [

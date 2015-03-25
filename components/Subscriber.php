@@ -1,6 +1,7 @@
 <?php namespace JohnGerome\Sm\Components;
 
 use Response;
+use Mail;
 use Cms\Classes\ComponentBase;
 use JohnGerome\Sm\Models\Project;
 use JohnGerome\Sm\Models\Contact;
@@ -51,7 +52,7 @@ class Subscriber extends ComponentBase
     $error   = false;
     $message = 'Thank You for Subscribing';
 
-    $project_id   = post('project');
+    $project_id = post('project');
     $data = [
         "email"        => post('email'),
         "firstname"    => post('firstname'),
@@ -59,24 +60,55 @@ class Subscriber extends ComponentBase
         "latitude"     => post('latitude'),
         "longitude"    => post('longitude'),
         "contact_att"  => post('contact_att'),
+        "debug"        => (post('debug')) ? post('debug') : false,
     ];
 
     try{
 
         if(!Project::find($project_id)) {
-          $error = true;
+          $error   = true;
           $message = 'Project Not Found!';
         }
         else {
+          // Add Contact to the Database.
           $contact = Contact::create($data);
           $contact->projects()->attach($project_id);
-        }
 
-        $this->page['result'] = $message;
+          // Send eMail
+          $sm = $this->onSendMail($data);
+
+          $this->page['result'] = $message;
+        }
     }
-    catch (\Exception $e){
-        $this->page['error'] = $error;
+    catch (\Exception $e) {
+        $this->page['error']  = $error;
         $this->page['result'] = $e->getMessage();
     }
+  }
+
+  public function onSendMail($data = array()) {
+    $result = true;
+    $debug  = $data['debug'];
+    try {
+      $explodeEmail = explode("@", $data['email']);
+      array_pop($explodeEmail);
+      $usernameEmail = join('@', $explodeEmail);
+
+      $toName = ($data['firstname']) ? $data['firstname'] : $usernameEmail;
+      $params = ['name' => $toName];
+
+      Mail::send('johngerome.sm::mail.confirmed_opt_in', $params, function($message) use ($data)
+      {
+          // $message->from('jessicasanders@gsapparel.org', 'Jessica Sanders');
+          $message->to($data['email']);
+      });
+    }
+    catch (\Exception $e) {
+        $result = false;
+        if($debug) {
+          $result = $e;
+        }
+    }
+    return $result;
   }
 }
